@@ -93,6 +93,6 @@ gulp.task('test', ['build'], function (done) {
 });
 
 // Default
-gulp.task('default', ['build']);
+gulp.task('default', ['test']);
 
 /* END Main Tasks */

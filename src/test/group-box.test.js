@@ -11,18 +11,15 @@ import {
 
 import { Component } from 'angular2/core';
 
-import { GroupBox, GroupBoxHeader } from '../app/group-box/group-box.js';
+import { GroupBox } from '../app/group-box/group-box.js';
 
 @Component({
   template: '',
-  directives: [GroupBox, GroupBoxHeader]
+  directives: [GroupBox]
 })
 class TestComponent {
   expandedCallback() {
     this.expandedCalled = true;
-  }
-  collapsedCallback() {
-    this.collapsedCalled = true;
   }
 }
 
@@ -47,8 +44,7 @@ describe('group-box control', () => {
 
     tick();
     fixture.detectChanges();
-    expect(element.expandedCalled).toBeFalsy();
-
+    expect(false).toBeTruthy();
 
   })));
 
