@@ -21,8 +21,14 @@ class TestComponent {
 
 describe('group-box control', () => {
 
-  //'should raise expanded event on title click when it is expandable and it is collapsed'
-  it('should fail', inject([TestComponentBuilder], fakeAsync((tcb) => {
+  it('should pass', injectAsync([TestComponentBuilder], (tcb) => {
+    return tcb.createAsync(TestComponent).then( (fixture) => {
+        fixture.detectChanges();
+        expect(true).toBeTruthy();
+    });
+  }));
+
+  it('should fail with message "Expected false to be truthy"', inject([TestComponentBuilder], fakeAsync((tcb) => {
     var fixture;
 
     // tcb.overrideTemplate(TestComponent, '<group-box id="identifier"></group-box>')
@@ -31,9 +37,7 @@ describe('group-box control', () => {
       });
 
     tick();
-
     fixture.detectChanges();
-
     expect(false).toBeTruthy();
 
   })));
