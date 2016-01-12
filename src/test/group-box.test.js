@@ -28,20 +28,6 @@ class TestComponent {
 
 describe('group-box control', () => {
 
-  it('should show the body content on title click when it is expandable and it is not expanded', injectAsync([TestComponentBuilder], (tcb) => {
-    return tcb.overrideTemplate(TestComponent, '<group-box isExpandable="true" [isExpanded]="false"><group-box-header>Title Content</group-box-header>Body Content</group-box>')
-      .createAsync(TestComponent).then( (fixture) => {
-
-        fixture.detectChanges();
-        let compiled = fixture.debugElement.nativeElement;
-        expect(compiled).not.toContainText('Body Content');
-
-        compiled.querySelector('.group-box-header').click();
-        fixture.detectChanges();
-        expect(compiled).toContainText('Body Content');
-    });
-  }));
-
   //'should raise expanded event on title click when it is expandable and it is collapsed'
   it('testing...', inject([TestComponentBuilder], fakeAsync((tcb) => {
     var fixture;
